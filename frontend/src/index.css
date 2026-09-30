@@ -1,0 +1,91 @@
+:root {
+  --bg: #f7f7f8;
+  --panel: #ffffff;
+  --text: #1c1c1e;
+  --muted: #6b6b73;
+  --border: #e3e3e8;
+  --accent: #4f46e5;
+  --accent-text: #ffffff;
+  --user-bubble: #4f46e5;
+  --bot-bubble: #ffffff;
+  --error: #c62828;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111114;
+    --panel: #18181c;
+    --text: #ececf1;
+    --muted: #9a9aa5;
+    --border: #2c2c33;
+    --accent: #818cf8;
+    --accent-text: #111114;
+    --user-bubble: #4f46e5;
+    --bot-bubble: #1f1f24;
+    --error: #ef9a9a;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+button { font: inherit; cursor: pointer; }
+.muted { color: var(--muted); }
+.small { font-size: 0.8rem; }
+.error { color: var(--error); }
+
+.layout { display: grid; grid-template-columns: 280px 1fr; height: 100vh; }
+
+/* Sidebar */
+.sidebar { background: var(--panel); border-right: 1px solid var(--border); padding: 20px; overflow-y: auto; }
+.brand { font-size: 1.3rem; margin: 0 0 4px; }
+.section-title { font-size: 0.9rem; margin: 24px 0 8px; }
+.dropzone {
+  display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center;
+  margin-top: 16px; padding: 20px 12px; border: 1.5px dashed var(--border); border-radius: 10px;
+  cursor: pointer; font-size: 0.9rem;
+}
+.dropzone:hover { border-color: var(--accent); }
+.dropzone.busy { opacity: 0.6; pointer-events: none; }
+.doc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.doc-item { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 6px; }
+.doc-item:hover { background: var(--bg); }
+.doc-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.85rem; }
+.icon-btn { background: none; border: none; color: var(--muted); font-size: 1.1rem; line-height: 1; }
+.icon-btn:hover { color: var(--error); }
+
+/* Chat */
+.chat { display: flex; flex-direction: column; min-width: 0; }
+.messages { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+.msg { display: flex; }
+.msg.user { justify-content: flex-end; }
+.bubble { max-width: min(720px, 85%); padding: 10px 14px; border-radius: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.user .bubble { background: var(--user-bubble); color: #fff; }
+.assistant .bubble { background: var(--bot-bubble); border: 1px solid var(--border); }
+.bubble p { margin: 0.4em 0; }
+.typing { color: var(--muted); font-style: italic; }
+
+.sources { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+.source-chip { background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 999px; padding: 3px 10px; font-size: 0.8rem; text-align: left; }
+.source-text { margin: 6px 0 0; padding: 8px 12px; border-left: 3px solid var(--accent); background: var(--bg); font-size: 0.82rem; white-space: pre-wrap; }
+
+.empty { margin: auto; text-align: center; max-width: 520px; }
+.suggestions { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.suggestion { background: var(--panel); border: 1px solid var(--border); color: var(--text); border-radius: 10px; padding: 10px 14px; }
+.suggestion:hover { border-color: var(--accent); }
+
+.composer { display: flex; gap: 8px; padding: 16px 24px; border-top: 1px solid var(--border); background: var(--panel); }
+.composer input {
+  flex: 1; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--text); font: inherit;
+}
+.composer input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.composer button { padding: 0 20px; border: none; border-radius: 10px; background: var(--accent); color: var(--accent-text); font-weight: 600; }
+.composer button:disabled { opacity: 0.5; cursor: default; }
+
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: 100dvh; }
+  .sidebar { border-right: none; border-bottom: 1px solid var(--border); max-height: 40dvh; padding: 16px; }
+  .messages, .composer { padding-left: 16px; padding-right: 16px; }
+}

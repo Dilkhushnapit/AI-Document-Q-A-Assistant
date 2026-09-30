@@ -1,0 +1,16 @@
+SkyNote Smart Notebook - Frequently Asked Questions
+
+Q: How long does the battery last?
+A: The SkyNote battery lasts up to 14 days on a single charge with typical use (about 2 hours of writing per day). A full charge takes 90 minutes using the included USB-C cable.
+
+Q: Which apps can I sync my notes with?
+A: SkyNote syncs with Google Drive, Dropbox, OneDrive and Notion. Syncing happens automatically over Wi-Fi every 5 minutes, or instantly when you tap the cloud icon.
+
+Q: Is the SkyNote waterproof?
+A: No. SkyNote is splash-resistant (IPX2) but is not waterproof. Do not submerge the device.
+
+Q: What is the warranty?
+A: Every SkyNote comes with a 2-year limited warranty covering manufacturing defects. Accidental damage such as a cracked screen is not covered, but can be added with SkyCare+ for $49 per year.
+
+Q: How do I reset the device?
+A: Hold the power button and the top page button together for 10 seconds until the logo appears. A reset does not delete notes that have already been synced to the cloud.
